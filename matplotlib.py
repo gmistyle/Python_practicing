@@ -35,3 +35,10 @@ plt.scatter(gdp_cap, life_exp, s = pop, c = col)
 # Change the opacity of the bubbles by setting the alpha argument to 0.8 inside plt.scatter(). 
 # Alpha can be set from zero to one, where zero totally transparant, and one is not transparant.
 plt.scatter(gdp_cap, life_exp, s = pop, c = col, alpha = 0.8)
+
+#add text into plot
+# Additional customizations
+plt.text(1550, 71, 'India') #the number_argument means coordinate of the plot
+plt.text(5700, 80, 'China')
+
+plt.grid(True) #gridlines are drawn on the plot.

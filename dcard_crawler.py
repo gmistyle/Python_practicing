@@ -61,10 +61,13 @@ def DCARD_crawler(website, start):
     fname = start
     for u in url:
         print('download picture_' + str(fname))
-        urllib.request.urlretrieve(u, os.path.join('dcard', str(fname) + '.jpg'))
-        fname += 1
+        try:
+            urllib.request.urlretrieve(u, os.path.join('dcard', str(fname) + '.jpg'))
+            fname += 1
+        except:
+            pass
 
-url = DCARD_crawler('website', 0)
+DCARD_crawler('website', 0)
 
 #os.makedirs(foldername) #創建圖片資料夾，創在腳本所在路徑
 #https://i.imgur.com/

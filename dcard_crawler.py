@@ -68,3 +68,4 @@ url = DCARD_crawler('website', 0)
 
 #os.makedirs(foldername) #創建圖片資料夾，創在腳本所在路徑
 #https://i.imgur.com/
+#Reference:<http://www.pycone.com/blogs/python-data-science-tutorial-1>

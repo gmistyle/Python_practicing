@@ -93,4 +93,4 @@ def PTT_beauty_crawler(from_page, to_page, start_name_num, push):
 PTT_beauty_crawler(2109, 2115, 0, 100)
 ##PTT_beauty_crawler(起始頁數, 結束頁數, 第一個檔案名稱(數字), 幾推以上)
 ##頁數從0到2109，(2017/3/15最後一頁為2109)
-##Reference : 
+##Reference : <http://www.pycone.com/blogs/python-data-science-tutorial-1>

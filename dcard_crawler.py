@@ -55,20 +55,20 @@ def get_articles(soup):
     return url
 
 #爬蟲
-def DCARD_crawler(website, start):
+def DCARD_crawler(website, start, foldername):
+    os.makedirs(foldername)
     page = get_web_page(website)
     url = get_articles(page)
     fname = start
     for u in url:
         print('download picture_' + str(fname))
         try:
-            urllib.request.urlretrieve(u, os.path.join('dcard', str(fname) + '.jpg'))
+            urllib.request.urlretrieve(u, os.path.join(foldername, str(fname) + '.jpg'))
             fname += 1
         except:
             pass
-
-DCARD_crawler('website', 0)
-
+#執行
+DCARD_crawler('website', 0, 'foldername')
 #os.makedirs(foldername) #創建圖片資料夾，創在腳本所在路徑
 #https://i.imgur.com/
 #Reference:<http://www.pycone.com/blogs/python-data-science-tutorial-1>

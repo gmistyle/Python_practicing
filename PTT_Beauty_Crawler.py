@@ -1,9 +1,9 @@
 import requests
 import time
-from bs4 import BeautifulSoup
 import os
 import re
 import urllib.request
+from bs4 import BeautifulSoup
 
 #取得該網址的source code
 def get_web_page(url):

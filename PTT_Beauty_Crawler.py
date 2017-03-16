@@ -55,6 +55,7 @@ def get_articles(soup, push):
                     img_urls.append(link['href'])
                     title.append(article['title'])
 
+
     for img_url in img_urls:#將圖片連結改成可下載
         if img_url.split('//')[1].startswith('m.'):
             img_url = img_url.replace('//m.', '//i.')
@@ -68,7 +69,10 @@ def get_articles(soup, push):
 ##儲存圖片##存成資料夾
 def save(img_urls, title, start):
     for file in set(title):
-        os.makedirs(file.strip())
+        try:
+            os.makedirs(file.strip())
+        except:
+            pass
     cnt = start
     for url, name in zip(img_urls, title):
         foldername = name.strip()
@@ -78,17 +82,19 @@ def save(img_urls, title, start):
             cnt +=1
         except:
             pass
+    return cnt
 
 ## PTT crawler
 def PTT_beauty_crawler(from_page, to_page, start_name_num, push):
     url_0 = 'https://www.ptt.cc/bbs/Beauty/index'
     url_2 = '.html'
+    num = start_name_num
     for number in range(from_page, to_page):
         print('# # # # # ' + 'processing page:' + str(number) + ' # # # # # ')
         URL = url_0 + str(number) + url_2  # 重複取得網址
         page = get_web_page(URL)
         url, title = get_articles(page, push)
-        save(url, title, start_name_num)
+        num = save(url, title, num)
 
 PTT_beauty_crawler(2109, 2115, 0, 100)
 ##PTT_beauty_crawler(起始頁數, 結束頁數, 第一個檔案名稱(數字), 幾推以上)

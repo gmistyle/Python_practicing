@@ -1,5 +1,6 @@
 import os
 
+os.path.abspath('.')# 取得當前的工作目錄
 os.getcwd()# 取得當前的工作目錄
 
 os.chdir("欲切換的路徑")# 切換目錄

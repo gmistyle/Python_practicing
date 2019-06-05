@@ -1,8 +1,18 @@
 import pandas as pd
 
-#function_1 : input file
+###input files
+#function_1
 names = ['col_1', 'col_2', 'col_3']
-data_1 = pd.read_table('path or files names', sep = '|', header = None, names = user_cols)
+data_1 = pd.read_table('path or file name', sep = '|', header = None, names = user_cols)
 
-#function_2 : input file
-data_2 = pd.read_excel('path or files names', sheetname 'sheet_1')
+#function_2
+#the only different is the 'sep'
+data_2 = pd.read_excel('path or file name', sheetname 'sheet_1')
+data_3 = pd.read_csv('path or file name)
+
+###select series
+data.col_1 #it could conflict with some built_in function
+data['col_1']
+                     
+###create new series
+data['new_col'] = data['col_1'] + ',' + data['col_2']

@@ -12,10 +12,11 @@ data_3 = pd.read_csv('path or file name)
                    
 #show some datas
 data.head()
-
 #descriptive statistics
-data.describe()
-                     
+data.describe(include = ['data_type : {float64, object,}'])                     
+#function       
+data.shape
+data.dtypes                     
 ###select series
 data.col_1 #it could conflict with some built_in function
 data['col_1'] #it would be more

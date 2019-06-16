@@ -9,6 +9,8 @@ data_1 = pd.read_table('path or file name', sep = '|', header = None, names = us
 #the only different is the 'sep'
 data_2 = pd.read_excel('path or file name', sheetname 'sheet_1')
 data_3 = pd.read_csv('path or file name)
+#read only specific columns/rows
+data = pd.read_csv('path', usecols = [0, 4], nrow = 3)                     
                    
 #show some datas
 data.head()

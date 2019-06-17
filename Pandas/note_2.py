@@ -21,3 +21,12 @@ data[(data.col_1 >= 200) & (data.col_2 >= 300)] #cant use and/or but only &/|
 
 #filter by multiple condition in one columns
 data.col.isin(['first', 'second', 'third'])
+
+#use string methods in pandas
+data.col_name.str.method_name()
+
+#change the data type of a pandas series
+data['col_name'] = data.col_name.astype(float)
+#change the data type of a pandas series while reading the data
+data = pd.read_csv('path', dtype = {'col_name' : float})
+

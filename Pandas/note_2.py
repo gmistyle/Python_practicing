@@ -30,3 +30,17 @@ data['col_name'] = data.col_name.astype(float)
 #change the data type of a pandas series while reading the data
 data = pd.read_csv('path', dtype = {'col_name' : float})
 
+#groupby method
+data.groupby('col_name').col_name_2.mean()
+#multiple function when using groupby method
+data.groupby('col_name').col_name_2.agg(['count', 'min', 'max', 'mean'])
+
+#basic process of exploring a pandas series
+data.dtypes #show the data types of every column
+data.col_name.describe() #descriptive statistics of the column
+data.col_name.value_counts() #calculate the frequence of every unique value
+data.col_name.value_counts(normalize=True) #calculate the percentage of the frequence of every unique value
+data.col_name.unique() #shows the number of every unique value of the column
+data.col_name.nunique() #shows every unique value of the column
+#
+pd.crosstab(data.col_1, data.col_2) #show the cross table of these two columns

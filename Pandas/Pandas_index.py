@@ -14,3 +14,21 @@ data.index.name = None #delete the first row that represents as index name
 data.index.name = 'col_name'
 data.reset_index(inplace = True)
 data.head()
+
+#usage_1
+data.set_index('col_name', inplace = True)
+data.head()
+data.col_name.head()
+data.col_name.value_counts()
+data.col_name.value_counts().values #show the value of method "value_count"
+data.col_name.value_counts()['index_name'] #it will output the value counts of that index name
+
+#sorting by index
+data.col_name.value_counts().sort_index()
+
+#alignment
+data = pd.Series([3000000, 85000], index = ['Taiwan', 'Japan'], name = 'Population')
+
+
+ 
+                 

@@ -8,7 +8,7 @@ data_1 = pd.read_table('path or file name', sep = '|', header = None, names = us
 #function_2
 #the only different is the 'sep'
 data_2 = pd.read_excel('path or file name', sheetname 'sheet_1')
-data_3 = pd.read_csv('path or file name)
+data_3 = pd.read_csv('path or file name')
 #read only specific columns/rows
 data = pd.read_csv('path', usecols = [0, 4], nrow = 3)                     
                    
@@ -16,7 +16,7 @@ data = pd.read_csv('path', usecols = [0, 4], nrow = 3)
 data.head()
 #descriptive statistics
 data.describe(include = ['data_type : {float64, object,}'])                     
-#function       
+#function 
 data.shape
 data.dtypes #(nums of rows, nums of cols)                     
 ###select series

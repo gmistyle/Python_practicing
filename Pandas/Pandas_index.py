@@ -27,8 +27,13 @@ data.col_name.value_counts()['index_name'] #it will output the value counts of t
 data.col_name.value_counts().sort_index()
 
 #alignment
-data = pd.Series([3000000, 85000], index = ['Taiwan', 'Japan'], name = 'Population')
+People = pd.Series([3000000, 85000], index = ['Taiwan', 'Japan'], name = 'Population')
+Beer_serving = pd.Series([10000, 20000], index = ['Taiwan', 'Japan'], name = 'Beer_serving')
+New_Series = People*Beer_serving #it will multiple two series by the index name, ex: the population of Taiwan*the beer serving of Taiwan
 
+#append new_series to old dataframe
+pd.concat([old_data, new_series], axis = 1) #the index should be the same
+              
 
  
                  

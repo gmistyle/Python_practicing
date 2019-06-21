@@ -1,2 +1,2 @@
-# Python_practicing
-A set of python files
+# Python_package_notebook
+A python library

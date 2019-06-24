@@ -2,4 +2,35 @@ import pandas as pd
 ufo = pd.read_csv('http://bit.ly/uforeports')
 
 ufo.head(3)
-#ufo.loc['what rows do you want', 'what columns do you want']
+ufo.loc['what rows do you want', 'what columns do you want']
+
+#example
+ufo.loc[[0, 1, 2], :]
+ufo.loc[0:2, :] #loc is inclusive on both sides for 0:2
+ufo.loc[0, 'City']
+
+#selecting rows by condition
+ufo.loc[ufo.City == 'Oakland', 'State']
+ufo[ufo.City == 'Oakland'].State #this approach might cause some problem
+
+#----------------------------------------------------------------------------#
+#integer loc >>> iloc
+#use integer as index in method loc
+
+#example
+ufo.iloc[:, 0:4] #method iloc will exclude index "4'
+
+#----------------------------------------------------------------------------#
+#method ix : mixed integers and lables when doing selection
+drinks = pd.read_csv('http://bit.ly/drinkscountry', index_col = 'country')
+drinks.head()
+
+#equivalent two ways to select a number
+drinks.ix['Albania', 0]
+drinks.ix[1, 'beer_servings']
+
+#
+ufo.ix[0:2, 0:2]
+#it could be really confusing between 'inclusive' and 'exclusive', it is beter not using it unless it was necessary.
+ 
+
